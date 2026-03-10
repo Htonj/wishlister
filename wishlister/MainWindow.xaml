@@ -1,0 +1,20 @@
+﻿<Window x:Class="wishlister.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wishlister"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#212121">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Label FontFamily="Lucida Console" Name="namexD" FontWeight="Bold" Foreground="White" Margin="10, 25" FontSize="25">List of your wishes</Label>
+            <Button Margin="400, 15" BorderThickness="0" Width="55" Background="HotPink" FontSize="25" Foreground="White" Click="Button_Click">+</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Name="WishStack"></StackPanel>
+    </Grid>
+</Window>
