@@ -37,15 +37,14 @@ To run the project locally:
 
 - **C#**: Programming language used for the application.
 - **.NET Core**: Framework for building the application.
-- **Entity Framework**: To manage database interactions.
-- **SQLite**: Lightweight database for storing wishlist items.
+- **XAML**: Tag language for drawin UI
+- **WPF**: The core framework
 
 ### Usage
 
 1. Start the application.
 2. Use the provided UI to add items to your wishlist.
 3. Edit or delete items as needed.
-4. Optionally, share your wishlist link with others.
 
 ### Contributing
 
