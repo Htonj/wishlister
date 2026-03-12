@@ -51,5 +51,3 @@ To run the project locally:
 Contributions are welcome! Please open issues or submit pull requests for any improvements or features you would like to add.
 
 ---
-
-Feel free to modify any section according to your project's specifics! If you need additional features or adjustments, let me know.
