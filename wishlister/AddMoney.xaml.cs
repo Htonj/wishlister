@@ -10,33 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace wishlister
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для AddMoney.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddMoney : Window
     {
-        public MainWindow()
+        public static MainWindow mw = new MainWindow();
+        public static Wish wi = new Wish("qwe", "123", mw);
+        public AddMoney(Wish wish)
         {
             InitializeComponent();
-            foreach (Wish w in Wishes.wishlist)
-                WishStack.Children.Add(w);
+            wi = wish;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Adder adder = new Adder(this);
-            adder.Show();
-        }
-        public void UpdateWishStack()
-        {
-            WishStack.Children.Clear();
-            foreach (Wish w in Wishes.wishlist)
-                WishStack.Children.Add(w);
+            wi.UpdateProgressBar(Convert.ToInt32(PriceBox.Text));
+            this.Close();
         }
     }
 }

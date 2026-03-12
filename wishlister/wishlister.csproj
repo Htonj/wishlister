@@ -55,9 +55,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Adder.xaml.cs">
+      <DependentUpon>Adder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddMoney.xaml.cs">
+      <DependentUpon>AddMoney.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Wish.xaml.cs">
       <DependentUpon>Wish.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Wishes.cs" />
+    <Page Include="Adder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddMoney.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

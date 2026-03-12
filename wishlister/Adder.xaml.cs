@@ -19,9 +19,22 @@ namespace wishlister
     /// </summary>
     public partial class Adder : Window
     {
-        public Adder()
+        public static MainWindow mw = new MainWindow();
+        public Adder(MainWindow mainWindow)
         {
             InitializeComponent();
+            mw = mainWindow;
+        }
+
+        private void OnClose(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Wishes.wishlist.Add(new Wish(NameBox.Text, PriceBox.Text, mw));
+            mw.UpdateWishStack();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
