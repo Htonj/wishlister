@@ -20,42 +20,37 @@ namespace wishlister
     /// </summary>
     public partial class Wish : UserControl
     {
-        public static MainWindow mw = new MainWindow();
+        private MainWindow _mainWindow;
+
         public Wish(string names, string prices, MainWindow mainWindow)
         {
             InitializeComponent();
             price.Content = prices;
             namexD.Content = names;
-            mw = mainWindow;
-
+            _mainWindow = mainWindow;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var parent = (StackPanel)this.Parent;
-            if (parent != null)
-            {
-                mw.WishStack.Children.Remove(this);
-            }
-            AddMoney addMoney = new AddMoney(this);
+            var addMoney = new AddMoney(this, _mainWindow);
             addMoney.Show();
         }
+
         public void UpdateProgressBar(int newMoney)
         {
-            var parent = (StackPanel)this.Parent;
-            if (parent != null)
-            {
-                parent.Children.Remove(this);
-            }
-            Wishes.wishlist.Add(this);
-            mw.UpdateWishStack();
-            MoneyPB.Value = newMoney / Convert.ToInt32(price.Content) * 100;
+            if (_mainWindow == null) return;
+
+            int targetPrice = Convert.ToInt32(price.Content);
+            MoneyPB.Value = (newMoney * 100) / targetPrice;
+
+            
+            _mainWindow.UpdateWishStack();
         }
+
         private void Button_ClickClose(object sender, RoutedEventArgs e)
         {
-
-            Wishes.wishlist.RemoveAt(Wishes.wishlist.Count-1);
-            mw.UpdateWishStack();
+            Wishes.wishlist.Remove(this);
+            _mainWindow?.UpdateWishStack();
         }
     }
 }

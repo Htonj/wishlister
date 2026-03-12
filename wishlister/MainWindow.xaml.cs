@@ -23,8 +23,7 @@ namespace wishlister
         public MainWindow()
         {
             InitializeComponent();
-            foreach (Wish w in Wishes.wishlist)
-                WishStack.Children.Add(w);
+            UpdateWishStack();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

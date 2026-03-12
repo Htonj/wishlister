@@ -19,17 +19,22 @@ namespace wishlister
     /// </summary>
     public partial class AddMoney : Window
     {
-        public static MainWindow mw = new MainWindow();
-        public static Wish wi = new Wish("qwe", "123", mw);
-        public AddMoney(Wish wish)
+        private Wish _wish;
+        private MainWindow _mainWindow;
+
+        public AddMoney(Wish wish, MainWindow mainWindow)
         {
             InitializeComponent();
-            wi = wish;
+            _wish = wish;
+            _mainWindow = mainWindow;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            wi.UpdateProgressBar(Convert.ToInt32(PriceBox.Text));
+            if (int.TryParse(PriceBox.Text, out int money))
+            {
+                _wish.UpdateProgressBar(money);
+            }
             this.Close();
         }
     }

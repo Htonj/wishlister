@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wishlister"
         mc:Ignorable="d"
-        Title="Adder" Height="150" Width="300" Background="#212121" Closing="OnClose">
+        Title="Adder" Height="150" Width="300" Background="#212121">
     <StackPanel>
     <Grid>
         <Grid.ColumnDefinitions>

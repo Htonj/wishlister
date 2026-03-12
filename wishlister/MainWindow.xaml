@@ -21,6 +21,6 @@
             <Label FontFamily="Lucida Console" Name="namexD" FontWeight="Bold" Foreground="White" Margin="10, 25" FontSize="25">List of your wishes</Label>
             <Button Margin="400, 15" BorderThickness="0" Width="55" Background="#FFF50748" FontSize="25" Foreground="White" Click="Button_Click">+</Button>
         </StackPanel>
-        <StackPanel Grid.Row="1" Name="WishStack" Grid.ColumnSpan="4"></StackPanel>
+        <StackPanel Margin="10, 0" Grid.Row="1" Name="WishStack" Grid.ColumnSpan="4"></StackPanel>
     </Grid>
 </Window>
